@@ -104,19 +104,10 @@ fn runitnotrust(m: i32) -> i32{
     return k;
 }
 fn checkifplaying(){
-    let mut res1 = Command::new("./cal.sh")
-    
-    // .arg("-c")
-    // .arg("pacmd")
-    // .arg("list-sink-inputs")
-    .stdout(Stdio::piped())
-    // .expect("failed to execute process")
-    .output()
-    .unwrap()
-    ;
-    let stdout = String::from_utf8(res1.stdout).unwrap();
-    // let mut res1 =res.unwrap().stdout;
-    // let k = String::from_utf8(res1).unwrap();
+     let mut command = shell("pacmd list-sink-inputs | grep -c 'state: RUNNING'");
+    command.stdout(Stdio::piped());
+    let output = command.execute_output().unwrap();
+    let stdout = String::from_utf8(output.stdout).unwrap();
     
     if(stdout.contains("1")){
         println!("vid playing background");
