@@ -1,12 +1,12 @@
 [package]
 name = "checknlock"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["visnkmr"]
-edition = "2018"
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-window_titles = { git = "https://github.com/HiruNya/window_titles", branch = "process-support", version = "0.1.0" }
+window_titles = { git = "https://github.com/HiruNya/window_titles"}
 schedule_recv = "0.1"
-execute = "0.2.11"
+execute = "0.2.12"
