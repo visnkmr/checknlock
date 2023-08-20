@@ -1,8 +1,21 @@
 [package]
 name = "checknlock"
 version = "0.2.0"
-authors = ["visnkmr"]
+description = "Checks if the current active window is of twitch or youtube and locks the screen if video has not been played for more than 2 minutes."
+authors = ["visnk"]
+license = ""
+repository = "https://github.com/visnkmr/checknlock"
 edition = "2021"
+
+
+
+[profile.release]
+strip = true  # Automatically strip symbols from the binary.
+opt-level = "z"
+lto = true
+panic = "abort"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
